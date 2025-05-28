@@ -4,48 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamaican Restaurant - Catering</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --brand-red: #B91C1C; /* Tailwind red-700 */
+        --brand-yellow: #F59E0B; /* Tailwind amber-500 */
+        --brand-green: #15803D; /* Tailwind green-700 */
+        --brand-black: #000000; /* Black */
+        --brand-text-dark: #1F2937; /* Tailwind gray-800 */
+        --brand-nav-link: #FFFFFF; /* White */
+        --brand-bg-light: #F9FAFB; /* Tailwind gray-50 */
+      }
+    </style>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="catering.html">Catering</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+<body class="bg-white text-[var(--brand-text-dark)] font-sans">
+<nav class="bg-[var(--brand-red)] p-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-[var(--brand-nav-link)] text-2xl font-bold">
+            Island Bites <!-- Placeholder for Logo/Site Name -->
+        </div>
+        <div class="md:hidden">
+            <button id="hamburger-button" class="text-[var(--brand-nav-link)] focus:outline-none">
+                <svg id="hamburger-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="hamburger-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute md:static top-[68px] left-0 w-full md:w-auto md:flex md:items-center md:space-x-4 bg-[var(--brand-red)] md:bg-transparent shadow-md md:shadow-none rounded-b-lg md:rounded-none py-2 md:py-0 z-40">
+            <a href="index.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Home</a>
+            <a href="menu.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Menu</a>
+            <a href="catering.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Catering</a>
+            <a href="contact.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Contact Us</a>
+        </div>
+    </div>
+</nav>
 
-    <div class="main-content">
-        <h1>Catering Services</h1>
-        <p>Bring the taste of Island Bites to your next event! We offer comprehensive catering services for parties, corporate events, and private gatherings.</p>
-        <img src="images/cater_img_banner.jpg" alt="Festive Jamaican food catering spread" style="width:100%;max-height:300px;object-fit:cover;margin-bottom:20px;">
+    <div class="container mx-auto p-4 md:p-8 shadow-lg bg-white my-4">
+        <h1 class="text-4xl font-bold text-[var(--brand-red)] mb-4 text-center">Catering Services</h1>
+        <p class="text-lg text-center mb-6">Bring the taste of Island Bites to your next event! We offer comprehensive catering services for parties, corporate events, and private gatherings.</p>
+        <img src="images/cater_img_banner.jpg" alt="Festive Jamaican food catering spread" class="w-full h-48 md:h-64 object-cover rounded-lg shadow-md mb-8">
 
-        <section id="catering-packages">
-            <h2>Our Packages</h2>
-            <p>Choose from a variety of packages or let us customize one for you:</p>
-            <ul>
-                <li>
-                    <img src="images/cater_img_package1.jpg" alt="The Beach Party catering package example" style="width:150px;height:100px;object-fit:cover;margin-right:10px;float:left;">
-                    <strong>The Beach Party:</strong> Jerk Chicken, Rice & Peas, Plantains, Coleslaw.
+        <section id="catering-packages" class="mb-8">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-4 border-b-2 border-[var(--brand-yellow)] pb-2">Our Packages</h2>
+            <p class="mb-4">Choose from a variety of packages or let us customize one for you:</p>
+            <ul class="space-y-6">
+                <li class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-4 bg-[var(--brand-bg-light)] p-4 rounded-lg shadow border-l-4 border-[var(--brand-green)]">
+                    <img src="images/cater_img_package1.jpg" alt="The Beach Party catering package example" class="w-full md:w-32 h-32 md:h-24 object-cover rounded shrink-0">
+                    <div class="flex-grow">
+                        <strong class="font-bold text-lg text-[var(--brand-red)]">The Beach Party:</strong> Jerk Chicken, Rice & Peas, Plantains, Coleslaw.
+                    </div>
                 </li>
-                <li>
-                    <img src="images/cater_img_package2.jpg" alt="The Kingston Classic catering package example" style="width:150px;height:100px;object-fit:cover;margin-right:10px;float:left;">
-                    <strong>The Kingston Classic:</strong> Curry Goat, Ackee & Saltfish, Rice & Peas, Steamed Cabbage.
+                <li class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-4 bg-[var(--brand-bg-light)] p-4 rounded-lg shadow border-l-4 border-[var(--brand-green)]">
+                    <img src="images/cater_img_package2.jpg" alt="The Kingston Classic catering package example" class="w-full md:w-32 h-32 md:h-24 object-cover rounded shrink-0">
+                    <div class="flex-grow">
+                        <strong class="font-bold text-lg text-[var(--brand-red)]">The Kingston Classic:</strong> Curry Goat, Ackee & Saltfish, Rice & Peas, Steamed Cabbage.
+                    </div>
                 </li>
-                <li>
-                    <img src="images/cater_img_package3.jpg" alt="Custom Menu catering package example" style="width:150px;height:100px;object-fit:cover;margin-right:10px;float:left;">
-                    <strong>Custom Menu:</strong> Work with our chef to create your perfect island feast.
+                <li class="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-4 bg-[var(--brand-bg-light)] p-4 rounded-lg shadow border-l-4 border-[var(--brand-green)]">
+                    <img src="images/cater_img_package3.jpg" alt="Custom Menu catering package example" class="w-full md:w-32 h-32 md:h-24 object-cover rounded shrink-0">
+                    <div class="flex-grow">
+                        <strong class="font-bold text-lg text-[var(--brand-red)]">Custom Menu:</strong> Work with our chef to create your perfect island feast.
+                    </div>
                 </li>
             </ul>
-            <div style="clear:both;"></div>
+            <!-- The div style="clear:both;" is removed as flex is handling layout -->
         </section>
 
-        <section id="catering-inquiry">
-            <h2>Inquire About Catering</h2>
-            <p>Ready to plan your event? Fill out our contact form on the <a href="contact.html">Contact Us</a> page or call us directly to discuss your catering needs.</p>
-            <p>Please provide details like event date, number of guests, and any special requests.</p>
+        <section id="catering-inquiry" class="mb-8">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-4 border-b-2 border-[var(--brand-yellow)] pb-2">Inquire About Catering</h2>
+            <p class="mb-3">Ready to plan your event? Fill out our contact form on the <a href="contact.html" class="text-[var(--brand-green)] hover:underline font-semibold">Contact Us</a> page or call us directly to discuss your catering needs.</p>
+            <p class="mb-3">Please provide details like event date, number of guests, and any special requests.</p>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -4,86 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamaican Restaurant - Menu</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --brand-red: #B91C1C; /* Tailwind red-700 */
+        --brand-yellow: #F59E0B; /* Tailwind amber-500 */
+        --brand-green: #15803D; /* Tailwind green-700 */
+        --brand-black: #000000; /* Black */
+        --brand-text-dark: #1F2937; /* Tailwind gray-800 */
+        --brand-nav-link: #FFFFFF; /* White */
+        --brand-bg-light: #F9FAFB; /* Tailwind gray-50 */
+      }
+    </style>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="catering.html">Catering</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+<body class="bg-white text-[var(--brand-text-dark)] font-sans">
+<nav class="bg-[var(--brand-red)] p-4 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-[var(--brand-nav-link)] text-2xl font-bold">
+            Island Bites <!-- Placeholder for Logo/Site Name -->
+        </div>
+        <div class="md:hidden">
+            <button id="hamburger-button" class="text-[var(--brand-nav-link)] focus:outline-none">
+                <svg id="hamburger-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="hamburger-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute md:static top-[68px] left-0 w-full md:w-auto md:flex md:items-center md:space-x-4 bg-[var(--brand-red)] md:bg-transparent shadow-md md:shadow-none rounded-b-lg md:rounded-none py-2 md:py-0 z-40">
+            <a href="index.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Home</a>
+            <a href="menu.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Menu</a>
+            <a href="catering.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Catering</a>
+            <a href="contact.html" class="block md:inline-block text-[var(--brand-nav-link)] hover:text-[var(--brand-yellow)] px-4 py-2 md:px-2">Contact Us</a>
+        </div>
+    </div>
+</nav>
 
-    <div class="main-content">
-        <h1>Our Menu</h1>
+    <div class="container mx-auto p-4 md:p-8 shadow-lg bg-white my-4">
+        <h1 class="text-4xl font-bold text-[var(--brand-red)] mb-8 text-center">Our Menu</h1>
 
-        <section id="breakfast-items">
-            <h2>Breakfast Items</h2>
-            <div class="menu-item">
-                <h3 class="item-name">Small Breakfast Delight</h3>
-                <p class="item-description">A perfect light start to your day. (e.g., Johnnycake with saltfish, or porridge)</p>
-                <p class="item-price">$7.99</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Medium Morning Feast</h3>
-                <p class="item-description">A satisfying mid-sized traditional breakfast. (e.g., Ackee & Saltfish with fried dumplings)</p>
-                <p class="item-price">$12.99</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Large Jamaican Sunrise Platter</h3>
-                <p class="item-description">The full works! A hearty platter to keep you going. (e.g., Callaloo, boiled yam, banana, dumpling, with a choice of protein)</p>
-                <p class="item-price">$16.99</p>
+        <section id="breakfast-items" class="mb-10">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Breakfast Items</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                <!-- Ackee & Saltfish -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Ackee & Saltfish</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Served with 2 fried dumplings.</p><p class="font-semibold text-md text-right">$10.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with boiled yam, banana & 2 fried dumplings.</p><p class="font-semibold text-md text-right">$15.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">A hearty portion with boiled yam, banana, 2 fried dumplings, and plantain.</p><p class="font-semibold text-md text-right">$20.00</p></div>
+
+                <!-- Callaloo & Saltfish -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Callaloo & Saltfish</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Sautéed callaloo with saltfish, served with 2 festivals.</p><p class="font-semibold text-md text-right">$9.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with boiled green banana, & 2 festivals.</p><p class="font-semibold text-md text-right">$14.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">Generous serving with boiled green banana, 2 festivals, and fried plantain.</p><p class="font-semibold text-md text-right">$19.00</p></div>
+
+                <!-- Mackerel Rundown -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Mackerel Rundown</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Salted mackerel simmered in coconut milk with spices, served with 2 hardo bread slices.</p><p class="font-semibold text-md text-right">$11.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with boiled dumplings and green banana.</p><p class="font-semibold text-md text-right">$16.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">Full plate with boiled dumplings, green banana, and yam.</p><p class="font-semibold text-md text-right">$21.00</p></div>
+
+                <!-- Cornmeal Porridge -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Cornmeal Porridge</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Creamy cornmeal porridge, lightly sweetened and spiced. Served hot.</p><p class="font-semibold text-md text-right">$5.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">A comforting bowl of creamy cornmeal porridge. Served hot.</p><p class="font-semibold text-md text-right">$7.50</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">A large, satisfying bowl of creamy cornmeal porridge. Served hot.</p><p class="font-semibold text-md text-right">$10.00</p></div>
             </div>
         </section>
 
-        <section id="lunch-dinner-items">
-            <h2>Lunch/Dinner Items</h2>
-            <div class="menu-item">
-                <h3 class="item-name">Small Quick Bite (e.g., Jerk Chicken Snack Box)</h3>
-                <p class="item-description">Perfect for a light lunch or a smaller appetite. Served with a side.</p>
-                <p class="item-price">$10.99</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Medium Hearty Plate (e.g., Curry Goat)</h3>
-                <p class="item-description">A fulfilling portion of our signature dishes. Served with rice & peas and plantain.</p>
-                <p class="item-price">$15.99</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Large Island Feast (e.g., Oxtail Dinner)</h3>
-                <p class="item-description">A generous serving for the very hungry! Includes multiple sides.</p>
-                <p class="item-price">$19.99</p>
+        <section id="lunch-dinner-items" class="mb-10">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Lunch/Dinner Items</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                <!-- Jerk Chicken -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Jerk Chicken</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Served with rice & peas OR hardo bread.</p><p class="font-semibold text-md text-right">$12.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with rice & peas, steamed cabbage, and plantain.</p><p class="font-semibold text-md text-right">$17.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">A generous portion with rice & peas, steamed cabbage, plantain, and festival.</p><p class="font-semibold text-md text-right">$22.00</p></div>
+
+                <!-- Curry Goat -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Curry Goat</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Tender goat meat in rich curry sauce, served with white rice.</p><p class="font-semibold text-md text-right">$13.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with rice & peas and a side of coleslaw.</p><p class="font-semibold text-md text-right">$18.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">Full meal with rice & peas, coleslaw, and fried plantain.</p><p class="font-semibold text-md text-right">$23.00</p></div>
+
+                <!-- Oxtail -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Oxtail</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Slow-braised oxtail with butter beans, served with white rice.</p><p class="font-semibold text-md text-right">$15.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with rice & peas and a side of steamed vegetables.</p><p class="font-semibold text-md text-right">$20.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">A hearty plate with rice & peas, steamed vegetables, and plantain.</p><p class="font-semibold text-md text-right">$25.00</p></div>
+                
+                <!-- Brown Stew Fish -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3 mt-6 mb-2"><h4 class="text-2xl font-semibold text-[var(--brand-red)]">Brown Stew Fish</h4></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Small</h5><p class="mb-2 text-xs">Fried snapper simmered in a savory brown stew, served with crackers.</p><p class="font-semibold text-md text-right">$14.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Medium</h5><p class="mb-2 text-xs">Served with bammy and a side of okra.</p><p class="font-semibold text-md text-right">$19.00</p></div>
+                <div class="bg-[var(--brand-bg-light)] p-4 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]"><h5 class="text-xl font-bold text-[var(--brand-red)] mb-1">Large</h5><p class="mb-2 text-xs">Whole fish served with rice & peas, bammy, and festival.</p><p class="font-semibold text-md text-right">$24.00</p></div>
             </div>
         </section>
 
-        <section id="desserts">
-            <h2>Desserts</h2>
-            <div class="menu-item">
-                <h3 class="item-name">Rum Cake</h3>
-                <p class="item-description">Moist and rich cake infused with Jamaican rum.</p>
-                <p class="item-price">$7.00</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Coconut Drops</h3>
-                <p class="item-description">Chewy, sweet coconut and ginger cookies.</p>
-                <p class="item-price">$6.00</p>
+        <section id="desserts" class="mb-10">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Desserts</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                <div class="bg-[var(--brand-bg-light)] p-6 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]">
+                    <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Rum Cake</h3>
+                    <p class="mb-3 text-sm">Moist and rich cake infused with Jamaican rum.</p>
+                    <p class="font-semibold text-lg text-right">$7.00</p>
+                </div>
+                <div class="bg-[var(--brand-bg-light)] p-6 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]">
+                    <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Coconut Drops</h3>
+                    <p class="mb-3 text-sm">Chewy, sweet coconut and ginger cookies.</p>
+                    <p class="font-semibold text-lg text-right">$6.00</p>
+                </div>
             </div>
         </section>
 
-        <section id="drinks">
-            <h2>Drinks</h2>
-            <div class="menu-item">
-                <h3 class="item-name">Sorrel</h3>
-                <p class="item-description">A refreshing drink made from hibiscus flowers, ginger, and spices.</p>
-                <p class="item-price">$4.00</p>
-            </div>
-            <div class="menu-item">
-                <h3 class="item-name">Ting</h3>
-                <p class="item-description">Sparkling Jamaican grapefruit soda.</p>
-                <p class="item-price">$3.00</p>
+        <section id="drinks" class="mb-10">
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Drinks</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                <div class="bg-[var(--brand-bg-light)] p-6 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]">
+                    <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Sorrel</h3>
+                    <p class="mb-3 text-sm">A refreshing drink made from hibiscus flowers, ginger, and spices.</p>
+                    <p class="font-semibold text-lg text-right">$4.00</p>
+                </div>
+                <div class="bg-[var(--brand-bg-light)] p-6 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]">
+                    <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Ting</h3>
+                    <p class="mb-3 text-sm">Sparkling Jamaican grapefruit soda.</p>
+                    <p class="font-semibold text-lg text-right">$3.00</p>
+                </div>
             </div>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -101,3 +101,104 @@ h2 {
     font-size: 1.1em;
     text-align: right; 
 }
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    color: white; /* Matches nav link color */
+    font-size: 24px; /* Adjust as needed */
+    cursor: pointer;
+    padding: 10px; /* Add some padding for easier clicking */
+    margin-left: 10px; /* Space it from the left edge if nav is full width */
+}
+
+/* Responsive Navigation Styles */
+@media (max-width: 768px) {
+    nav ul#nav-links {
+        display: none; /* Hide the nav links by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        position: absolute; /* Position it relative to the nav */
+        top: 60px; /* Adjust based on nav height */
+        left: 0;
+        background-color: firebrick; /* Same as nav background */
+        padding: 0; /* Reset padding */
+        margin: 0; /* Reset margin */
+    }
+
+    nav ul#nav-links.active {
+        display: flex; /* Show when active (toggled by JS) */
+    }
+
+    nav ul li {
+        display: block; /* Make nav items take full width */
+        width: 100%;
+        text-align: left; /* Align text to the left */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    nav ul li a {
+        display: block; /* Make links take full width of li */
+        padding: 15px 20px; /* Adjust padding for vertical menu */
+        border-bottom: 1px solid rgba(255,255,255,0.2); /* Separator for items */
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none; /* Remove border from last item */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger menu on small screens */
+    }
+
+    /* Adjust main content padding if nav becomes fixed or changes height significantly */
+    /* body { padding-top: 70px; } /* Example if nav is fixed */
+
+    /* General Responsive Content Styles */
+    .main-content {
+        width: 95%;
+        padding: 15px 10px;
+    }
+
+    .main-content img { /* General responsive images in main content */
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section#catering-packages ul li img {
+        float: none;
+        display: block;
+        margin: 0 auto 10px; /* Center and add bottom margin */
+        width: 80%; /* Adjust as needed for stacked appearance */
+    }
+
+    h1, .main-content h1 {
+        font-size: 1.8em;
+    }
+
+    h2, .main-content h2 {
+        font-size: 1.4em;
+    }
+
+    p, .item-description { /* .item-description is already a p, but good to be explicit if it could change */
+        font-size: 0.95em;
+    }
+
+    .item-name { /* This is an h3 */
+        font-size: 1.1em;
+    }
+
+    .item-price {
+        font-size: 1em;
+    }
+
+    .menu-item {
+        padding: 10px; /* Adjust padding for smaller screens */
+        border-left-width: 4px; /* Slightly reduce border accent if desired */
+    }
+}
