@@ -1,0 +1,103 @@
+/* Updated CSS styling for new color scheme */
+
+body {
+    background-color: white; /* Neutral background for readability */
+    color: black; /* Accent/Text color */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px; 
+}
+
+nav {
+    background-color: firebrick; /* Primary color (Red) */
+    padding: 10px 0; 
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+nav ul li {
+    display: inline-block; 
+    margin-right: 20px; 
+}
+
+nav ul li a {
+    color: white; /* High contrast against red background */
+    text-decoration: none; 
+    padding: 8px 15px; 
+}
+
+/* General link styling */
+a {
+    color: forestgreen; /* Highlight color (Green) */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* User feedback on hover */
+}
+
+/* A basic rule to center main content (can be refined later) */
+.main-content {
+    width: 80%;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+/* General Heading Styles */
+h1 {
+    color: firebrick; /* Primary color (Red) */
+}
+
+h2 {
+    color: crimson; /* Primary color variant (Red) */
+}
+
+/* Menu Page Specific Styles */
+.main-content h1 { /* Styles "Our Menu" heading */
+    color: firebrick; /* Primary color (Red) */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.main-content h2 { /* Styles category headings like "Appetizers" */
+    color: crimson; /* Primary color variant (Red) */
+    border-bottom: 2px solid gold; /* Secondary color (Yellow) for border */
+    padding-bottom: 10px;
+    margin-top: 40px; 
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Keep light background for item */
+    border: 1px solid #ddd; 
+    border-left: 5px solid forestgreen; /* Highlight color (Green) for accent */
+}
+
+.menu-item .item-name { /* Styles h3, e.g., "Jerk Chicken Wings" */
+    color: firebrick; /* Primary color (Red) */
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.menu-item .item-description { /* Styles p, e.g., "Spicy grilled chicken wings..." */
+    color: #333; /* Dark gray for readability, good contrast on #f9f9f9 */
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.menu-item .item-price { /* Styles p, e.g., "$12.00" */
+    font-weight: bold;
+    color: black; /* Accent/Text color (Black) for emphasis */
+    font-size: 1.1em;
+    text-align: right; 
+}
