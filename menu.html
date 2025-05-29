@@ -43,16 +43,16 @@
 
         <div class="mb-6 border-b border-gray-300">
             <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
-                <button id="tab-breakfast" data-tab-target="#content-breakfast" class="tab-button active-tab whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-[var(--brand-red)] border-[var(--brand-red)]" aria-current="page">
+                <button id="tab-breakfast" data-tab-target="#content-breakfast" class="tab-button whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-gray-500 hover:text-gray-700 hover:border-gray-400 border-transparent">
                     Breakfast
                 </button>
-                <button id="tab-lunchdinner" data-tab-target="#content-lunchdinner" class="tab-button whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-gray-500 hover:text-gray-700 hover:border-gray-400 border-transparent">
+                <button id="tab-lunchdinner" data-tab-target="#content-lunchdinner" class="tab-button active-tab whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-[var(--brand-red)] border-[var(--brand-red)]" aria-current="page">
                     Lunch/Dinner
                 </button>
             </nav>
         </div>
 
-        <div id="content-breakfast" class="tab-content">
+        <div id="content-breakfast" class="tab-content hidden">
             <section id="breakfast-items" class="mb-10">
                 <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Breakfast Items</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
@@ -66,6 +66,123 @@
                             <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
                             <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
                             <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Curry Chicken Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/curry_chicken.jpg" alt="Curry Chicken" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Curry Chicken</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Tender chicken pieces simmered in a rich, aromatic curry sauce with traditional Jamaican spices and herbs.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$11.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$16.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$21.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fried Chicken Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/fried_chicken.jpg" alt="Fried Chicken" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Fried Chicken</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Crispy, golden-brown fried chicken, seasoned with a special blend of Jamaican herbs and spices for an irresistible flavor.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Brown Stew Chicken Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/brown_stew_chicken.jpg" alt="Brown Stew Chicken" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Brown Stew Chicken</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Succulent chicken pieces browned and simmered in a rich, savory gravy with carrots, onions, and island spices.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$11.50</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$16.50</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$21.50</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Jerk Pork Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/jerk_pork.jpg" alt="Jerk Pork" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Jerk Pork</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Authentic Jamaican jerk pork, marinated in fiery Scotch bonnet peppers and a traditional blend of pimento, ginger, and thyme, slow-smoked to perfection.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$13.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$18.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$23.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stew Peas Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/stew_peas.jpg" alt="Stew Peas" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Stew Peas</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">A hearty and flavorful stew of red kidney peas, salted beef or pork, and spinners (dumplings), simmered in rich coconut milk.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$12.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$17.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$22.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Jerk Chicken Rasta Pasta Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/jerk_chicken_rasta_pasta.jpg" alt="Jerk Chicken Rasta Pasta" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Jerk Chicken Rasta Pasta</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Creamy pasta tossed with bell peppers in the colors of the Rasta flag, and topped with spicy, flavorful jerk chicken.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$14.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$19.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$24.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Shrimp Rasta Pasta Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/shrimp_rasta_pasta.jpg" alt="Shrimp Rasta Pasta" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Shrimp Rasta Pasta</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Succulent shrimp in a creamy, colorful Rasta pasta. A delightful fusion of Italian and Jamaican flavors.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$25.00</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stew Pork Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/stew_pork.jpg" alt="Stew Pork" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Stew Pork</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Tender chunks of pork, slow-cooked in a rich brown gravy with carrots, potatoes, and traditional spices.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$12.50</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$17.50</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$22.50</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sweet Chilli Chicken Card -->
+                <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
+                    <img src="images/sweet_chilli_chicken.jpg" alt="Sweet Chilli Chicken" class="w-full h-40 sm:h-48 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Sweet Chilli Chicken</h3>
+                        <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Crispy chicken pieces tossed in a vibrant sweet chilli sauce, offering a perfect balance of sweet and spicy.</p>
+                        <div class="mt-auto border-t border-gray-300 pt-4">
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$11.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$16.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$21.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -112,7 +229,7 @@
             </section>
         </div>
 
-        <div id="content-lunchdinner" class="tab-content hidden">
+        <div id="content-lunchdinner" class="tab-content">
             <section id="lunch-dinner-items" class="mb-10">
                 <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Lunch/Dinner Items</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">

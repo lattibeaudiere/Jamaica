@@ -49,12 +49,76 @@
         </section>
 
         <section id="specials" class="mb-8 md:mb-12">
-            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-4 border-b-2 border-[var(--brand-yellow)] pb-2">Today's Specials</h2>
-            <p class="leading-relaxed mb-4">Ask about our delicious Jerk Chicken Special today! Served with rice & peas and plantains.</p>
-            <div class="bg-[var(--brand-bg-light)] p-6 rounded-lg shadow-md border-l-4 border-[var(--brand-green)]">
-                <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Special Jerk Combo</h3>
-                <p class="mb-2">A full plate of our signature jerk chicken, with a side of festival and our homemade hot sauce.</p>
-                <p class="font-semibold text-lg">$15.99</p>
+            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3 text-center">Today's Feature</h2>
+            <!-- MONDAY -->
+            <div id="special-monday" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1"> 
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Monday: Escovitch Fish</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">Crispy fried fish topped with a tangy, spicy pickled vegetable medley of onions, carrots, and pimento. A true taste of the Jamaican seaside.</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$17.00</p> 
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2"> 
+                    <img src="images/escovitch_fish.jpg" alt="Monday Special: Escovitch Fish" class="w-full h-48 md:h-56 object-cover rounded-md shadow"> 
+                </div>
+            </div>
+
+            <!-- TUESDAY -->
+            <div id="special-tuesday" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Tuesday: Pepper Steak</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">Tender strips of beef sautéed with colorful bell peppers, onions, and a savory, rich gravy. Served with white rice.</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$18.50</p>
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2">
+                    <img src="images/pepper_steak.jpg" alt="Tuesday Special: Pepper Steak" class="w-full h-48 md:h-56 object-cover rounded-md shadow">
+                </div>
+            </div>
+
+            <!-- WEDNESDAY -->
+            <div id="special-wednesday" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Wednesday: Mannish Water (Goat Soup)</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">A traditional Jamaican celebratory soup, simmered with goat meat, yams, potatoes, carrots, and spinners. Famous for its rich flavor!</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$14.50</p>
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2">
+                    <img src="images/mannish_water.jpg" alt="Wednesday Special: Mannish Water" class="w-full h-48 md:h-56 object-cover rounded-md shadow">
+                </div>
+            </div>
+
+            <!-- THURSDAY -->
+            <div id="special-thursday" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Thursday: Ital Stew (Vegetarian)</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">A hearty and wholesome vegetarian stew made with coconut milk, ground provisions (yam, dasheen), beans, carrots, and other vegetables. Pure vitality!</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$14.00</p>
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2">
+                    <img src="images/ital_stew.jpg" alt="Thursday Special: Ital Stew" class="w-full h-48 md:h-56 object-cover rounded-md shadow">
+                </div>
+            </div>
+
+            <!-- FRIDAY -->
+            <div id="special-friday" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Friday: Fish Tea (Fish Soup)</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">A light yet intensely flavorful fish broth soup, simmered with small pieces of fish, vegetables, herbs, and spices. A perfect warmer.</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$13.00</p>
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2">
+                    <img src="images/fish_tea.jpg" alt="Friday Special: Fish Tea" class="w-full h-48 md:h-56 object-cover rounded-md shadow">
+                </div>
+            </div>
+            
+            <div id="special-default" class="daily-special hidden bg-[var(--brand-bg-light)] p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-[var(--brand-green)] mb-6 flex flex-col md:flex-row items-center md:space-x-6">
+                <div class="flex-grow text-center md:text-left w-full md:w-auto mb-4 md:mb-0 order-2 md:order-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-[var(--brand-red)] mb-2">Our Famous Jerk Chicken</h3>
+                    <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-3">Always a good choice! Marinated in authentic spices and slow-cooked to perfection. Served with rice & peas and plantain.</p>
+                    <p class="font-semibold text-xl md:text-2xl text-[var(--brand-red)] mt-2">$15.00</p>
+                </div>
+                <div class="w-full md:w-1/3 lg:w-1/4 flex-shrink-0 order-1 md:order-2">
+                    <img src="images/jerk_chicken_special.jpg" alt="Our Famous Jerk Chicken" class="w-full h-48 md:h-56 object-cover rounded-md shadow">
+                </div>
             </div>
         </section>
     </div>

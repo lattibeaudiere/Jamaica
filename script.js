@@ -13,6 +13,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Daily specials functionality
+document.addEventListener('DOMContentLoaded', function() { // Wrap in DOMContentLoaded
+    const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+    const specialsMap = { // Use specialsMap to avoid confusion with existing 'specials' variable if any
+        1: 'special-monday',    // Monday
+        2: 'special-tuesday',   // Tuesday
+        3: 'special-wednesday', // Wednesday
+        4: 'special-thursday',  // Thursday
+        5: 'special-friday'     // Friday
+        // Saturday (6) and Sunday (0) will use the default
+    };
+    const defaultSpecialId = 'special-default';
+    let activeSpecialId = specialsMap[today] || defaultSpecialId;
+
+    const allDailySpecials = document.querySelectorAll('.daily-special'); // Use new variable name
+
+    if (allDailySpecials.length > 0) { // Check if special elements exist on the page
+        allDailySpecials.forEach(specialDiv => {
+            if (specialDiv.id === activeSpecialId) {
+                specialDiv.classList.remove('hidden');
+            } else {
+                specialDiv.classList.add('hidden'); // Ensure others are hidden
+            }
+        });
+    }
+});
+
 // Tab functionality for menu page
 document.addEventListener('DOMContentLoaded', function() { // Ensure this runs after DOM is loaded
     const tabs = document.querySelectorAll('.tab-button');
