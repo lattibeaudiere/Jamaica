@@ -41,9 +41,21 @@
     <div class="container mx-auto p-4 md:p-8 shadow-lg bg-white my-4">
         <h1 class="text-4xl font-bold text-[var(--brand-red)] mb-8 text-center">Our Menu</h1>
 
-        <section id="breakfast-items" class="mb-10">
-            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Breakfast Items</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div class="mb-6 border-b border-gray-300">
+            <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+                <button id="tab-breakfast" data-tab-target="#content-breakfast" class="tab-button active-tab whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-[var(--brand-red)] border-[var(--brand-red)]" aria-current="page">
+                    Breakfast
+                </button>
+                <button id="tab-lunchdinner" data-tab-target="#content-lunchdinner" class="tab-button whitespace-nowrap py-3 px-1 border-b-4 font-semibold text-2xl text-gray-500 hover:text-gray-700 hover:border-gray-400 border-transparent">
+                    Lunch/Dinner
+                </button>
+            </nav>
+        </div>
+
+        <div id="content-breakfast" class="tab-content">
+            <section id="breakfast-items" class="mb-10">
+                <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Breakfast Items</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 <!-- Ackee & Saltfish Card -->
                 <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
                     <img src="images/ackee_saltfish.jpg" alt="Ackee & Saltfish" class="w-full h-40 sm:h-48 object-cover">
@@ -51,9 +63,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Ackee & Saltfish</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Jamaica's national dish! Savory ackee fruit sautéed with codfish, onions, tomatoes, and aromatic island spices.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Served with 2 fried dumplings.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with boiled yam, banana & 2 fried dumplings.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">A hearty portion with boiled yam, banana, 2 fried dumplings, and plantain.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -64,9 +76,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Callaloo & Saltfish</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Nutritious callaloo greens cooked with delicate flakes of saltfish and traditional seasonings.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Sautéed callaloo with saltfish, served with 2 festivals.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$9.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with boiled green banana, & 2 festivals.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$14.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">Generous serving with boiled green banana, 2 festivals, and fried plantain.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$19.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$9.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$14.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$19.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -77,9 +89,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Mackerel Rundown</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Salted mackerel simmered in a rich, creamy coconut milk sauce with herbs and spices. A true island classic.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Salted mackerel simmered in coconut milk with spices, served with 2 hardo bread slices.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$11.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with boiled dumplings and green banana.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$16.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">Full plate with boiled dumplings, green banana, and yam.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$21.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$11.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$16.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$21.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -90,18 +102,20 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Cornmeal Porridge</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">A warm and comforting bowl of smooth cornmeal porridge, lightly sweetened with condensed milk and spiced with cinnamon and nutmeg.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">A light, warming portion.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$5.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">A standard satisfying bowl.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$7.50</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">A large, hearty serving.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$5.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$7.50</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$10.00</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <section id="lunch-dinner-items" class="mb-10">
-            <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Lunch/Dinner Items</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+        <div id="content-lunchdinner" class="tab-content hidden">
+            <section id="lunch-dinner-items" class="mb-10">
+                <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Lunch/Dinner Items</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                 <!-- Jerk Chicken Card -->
                 <div class="bg-[var(--brand-bg-light)] rounded-lg shadow-lg overflow-hidden flex flex-col">
                     <img src="images/jerk_chicken.jpg" alt="Jerk Chicken" class="w-full h-40 sm:h-48 object-cover">
@@ -109,9 +123,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Jerk Chicken</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Authentic Jamaican jerk chicken, marinated in fiery Scotch bonnet peppers and a secret blend of spices, then slow-cooked to perfection.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Served with rice & peas OR hardo bread.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$12.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with rice & peas, steamed cabbage, and plantain.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$17.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">A generous portion with rice & peas, steamed cabbage, plantain, and festival.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$22.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$12.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$17.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$22.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -122,9 +136,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Curry Goat</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Tender, fall-off-the-bone goat meat simmered in an aromatic curry sauce with potatoes and island spices.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Tender goat meat in rich curry sauce, served with white rice.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$13.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with rice & peas and a side of coleslaw.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$18.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">Full meal with rice & peas, coleslaw, and fried plantain.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$23.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$13.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$18.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$23.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -135,9 +149,9 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Oxtail</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Rich and flavorful oxtails, slow-cooked until incredibly tender in a savory gravy with butter beans.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Slow-braised oxtail with butter beans, served with white rice.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with rice & peas and a side of steamed vegetables.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">A hearty plate with rice & peas, steamed vegetables, and plantain.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$25.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$15.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$20.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$25.00</span></div>
                         </div>
                     </div>
                 </div>
@@ -148,14 +162,15 @@
                         <h3 class="text-2xl font-bold text-[var(--brand-red)] mb-2">Brown Stew Fish</h3>
                         <p class="text-sm text-[var(--brand-text-dark)] opacity-90 mb-4 flex-grow">Whole snapper, fried then simmered in a savory brown gravy with bell peppers, carrots, and onions. A Jamaican favorite.</p>
                         <div class="mt-auto border-t border-gray-300 pt-4">
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Small</span><p class="text-xs text-gray-600">Fried snapper simmered in a savory brown stew, served with crackers.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$14.00</span></div>
-                            <div class="flex justify-between items-center mb-2"><div><span class="font-semibold text-lg">Medium</span><p class="text-xs text-gray-600">Served with bammy and a side of okra.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$19.00</span></div>
-                            <div class="flex justify-between items-center"><div><span class="font-semibold text-lg">Large</span><p class="text-xs text-gray-600">Whole fish served with rice & peas, bammy, and festival.</p></div><span class="font-bold text-lg text-[var(--brand-red)]">$24.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Small</span><span class="font-bold text-lg text-[var(--brand-red)]">$14.00</span></div>
+                            <div class="flex justify-between items-center mb-2"><span class="font-semibold text-lg">Medium</span><span class="font-bold text-lg text-[var(--brand-red)]">$19.00</span></div>
+                            <div class="flex justify-between items-center"><span class="font-semibold text-lg">Large</span><span class="font-bold text-lg text-[var(--brand-red)]">$24.00</span></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
         <section id="desserts" class="mb-10">
             <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-6 border-b-2 border-[var(--brand-yellow)] pb-3">Desserts</h2>
