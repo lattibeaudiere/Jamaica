@@ -58,8 +58,16 @@
 
         <section id="find-us" class="mb-6">
             <h2 class="text-2xl font-semibold text-[var(--brand-red)] mb-3">Find Us</h2>
-            <p class="leading-relaxed mb-4">[Interactive Map Coming Soon!]</p>
-            <img src="images/placeholder-map.png" alt="Map to Island Bites" class="w-full rounded-lg shadow-md mt-2">
+            <div class="aspect-w-16 aspect-h-9 rounded-lg shadow-md overflow-hidden">
+                <iframe
+                    src="https://maps.google.com/maps?q=jamaica%20grand%20restaurant%20&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                    class="w-full h-full"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </section>
     </div>
     <script src="script.js"></script>
