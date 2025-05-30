@@ -13,6 +13,42 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Daily Soup of the Day functionality (for menu page)
+document.addEventListener('DOMContentLoaded', function() {
+    const currentDayForSoup = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+    const soupMap = {
+        0: 'soup-sunday',    // Sunday
+        1: 'soup-monday',    // Monday
+        2: 'soup-tuesday',   // Tuesday
+        3: 'soup-wednesday', // Wednesday
+        4: 'soup-thursday',  // Thursday
+        5: 'soup-friday',    // Friday
+        6: 'soup-saturday'   // Saturday
+    };
+    const activeSoupId = soupMap[currentDayForSoup]; 
+
+    const allDailySoups = document.querySelectorAll('.daily-soup');
+
+    if (allDailySoups.length > 0) { // Check if soup elements exist on the page
+        let soupShown = false;
+        allDailySoups.forEach(soupDiv => {
+            if (soupDiv.id === activeSoupId) {
+                soupDiv.classList.remove('hidden');
+                soupShown = true;
+            } else {
+                soupDiv.classList.add('hidden'); 
+            }
+        });
+
+        // Optional: If today's soup ID wasn't found (e.g. if soupMap didn't have an entry for currentDayForSoup)
+        // and no soup was therefore shown, you could choose to show a default message or hide the whole section.
+        // For now, if activeSoupId is undefined, all .daily-soup divs will remain hidden.
+        // If the section header should also hide if no soup is shown, that would require additional logic
+        // to target and hide the h2 or the entire section#soup-of-the-day.
+        // The current plan does not include this, so the "Soup of the Day" h2 will always show.
+    }
+});
+
 // Daily specials functionality
 document.addEventListener('DOMContentLoaded', function() { // Wrap in DOMContentLoaded
     const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
