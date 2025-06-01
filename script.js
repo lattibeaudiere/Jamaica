@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         5: 'soup-friday',    // Friday
         6: 'soup-saturday'   // Saturday
     };
-    const activeSoupId = soupMap[currentDayForSoup]; 
+    const activeSoupId = soupMap[currentDayForSoup];
 
     const allDailySoups = document.querySelectorAll('.daily-soup');
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 soupDiv.classList.remove('hidden');
                 soupShown = true;
             } else {
-                soupDiv.classList.add('hidden'); 
+                soupDiv.classList.add('hidden');
             }
         });
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() { // Ensure this runs a
                 tab.classList.add('active-tab', 'text-[var(--brand-red)]', 'border-[var(--brand-red)]');
                 tab.classList.remove('text-gray-500', 'hover:text-gray-700', 'hover:border-gray-400', 'border-transparent');
                 tab.setAttribute('aria-current', 'page');
-                
+
                 // Hide all tab contents
                 tabContents.forEach(content => {
                     content.classList.add('hidden');

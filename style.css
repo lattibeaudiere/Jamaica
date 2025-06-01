@@ -5,30 +5,30 @@ body {
     color: black; /* Accent/Text color */
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 20px; 
+    padding: 20px;
 }
 
 nav {
     background-color: firebrick; /* Primary color (Red) */
-    padding: 10px 0; 
+    padding: 10px 0;
 }
 
 nav ul {
-    list-style-type: none; 
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: center; 
+    text-align: center;
 }
 
 nav ul li {
-    display: inline-block; 
-    margin-right: 20px; 
+    display: inline-block;
+    margin-right: 20px;
 }
 
 nav ul li a {
     color: white; /* High contrast against red background */
-    text-decoration: none; 
-    padding: 8px 15px; 
+    text-decoration: none;
+    padding: 8px 15px;
 }
 
 /* General link styling */
@@ -44,10 +44,10 @@ a:hover {
 /* A basic rule to center main content (can be refined later) */
 .main-content {
     width: 80%;
-    margin: 20px auto; 
+    margin: 20px auto;
     padding: 20px;
-    background-color: white; 
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* General Heading Styles */
@@ -70,7 +70,7 @@ h2 {
     color: crimson; /* Primary color variant (Red) */
     border-bottom: 2px solid gold; /* Secondary color (Yellow) for border */
     padding-bottom: 10px;
-    margin-top: 40px; 
+    margin-top: 40px;
     margin-bottom: 20px;
 }
 
@@ -78,7 +78,7 @@ h2 {
     margin-bottom: 20px;
     padding: 15px;
     background-color: #f9f9f9; /* Keep light background for item */
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     border-left: 5px solid forestgreen; /* Highlight color (Green) for accent */
 }
 
@@ -99,7 +99,7 @@ h2 {
     font-weight: bold;
     color: black; /* Accent/Text color (Black) for emphasis */
     font-size: 1.1em;
-    text-align: right; 
+    text-align: right;
 }
 
 /* Hamburger Menu Styles */
