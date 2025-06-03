@@ -52,16 +52,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // Daily specials functionality
 document.addEventListener('DOMContentLoaded', function() { // Wrap in DOMContentLoaded
     const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
-    const specialsMap = { // Use specialsMap to avoid confusion with existing 'specials' variable if any
+    const specialsMap = {
+        0: 'special-sunday',    // Sunday
         1: 'special-monday',    // Monday
         2: 'special-tuesday',   // Tuesday
         3: 'special-wednesday', // Wednesday
         4: 'special-thursday',  // Thursday
-        5: 'special-friday'     // Friday
-        // Saturday (6) and Sunday (0) will use the default
+        5: 'special-friday',    // Friday
+        6: 'special-saturday'   // Saturday
     };
-    const defaultSpecialId = 'special-default';
-    let activeSpecialId = specialsMap[today] || defaultSpecialId;
+    let activeSpecialId = specialsMap[today];
 
     const allDailySpecials = document.querySelectorAll('.daily-special'); // Use new variable name
 
