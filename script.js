@@ -13,6 +13,92 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Catering Order Calculation Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const cateringModal = document.getElementById('catering-modal'); // Needed to know if we are on the right page
+    if (!cateringModal) return; // Only run this script if the catering modal is on the page
+
+    const itemCheckboxes = document.querySelectorAll('.catering-item-select');
+    const pattiesQtyInput = document.getElementById('patties-qty');
+
+    const selectedItemsListDiv = document.getElementById('selected-items-list');
+    const subtotalAmountSpan = document.getElementById('subtotal-amount');
+    const taxAmountSpan = document.getElementById('tax-amount');
+    const grandTotalAmountSpan = document.getElementById('grand-total-amount');
+    const salesTaxRate = 0.085;
+
+    function formatPrice(amount) {
+        return '$' + amount.toFixed(2);
+    }
+
+    function updateOrderSummary() {
+        let currentOrderItems = [];
+        let subtotal = 0;
+
+        // Process S/L checkbox items
+        itemCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const itemName = checkbox.closest('.catering-item').dataset.itemName;
+                const size = checkbox.dataset.size;
+                const price = parseFloat(checkbox.dataset.price);
+                currentOrderItems.push({ name: itemName, size: size, price: price });
+                subtotal += price;
+            }
+        });
+
+        // Process Cocktail Patties
+        if (pattiesQtyInput) {
+            const qty = parseInt(pattiesQtyInput.value, 10);
+            if (qty > 0) {
+                const itemName = pattiesQtyInput.closest('.catering-item').dataset.itemName;
+                const pricePerDozen = parseFloat(pattiesQtyInput.dataset.price);
+                const unit = pattiesQtyInput.dataset.unit || 'dozen';
+                const pattiesTotal = qty * pricePerDozen;
+                currentOrderItems.push({ name: itemName, qty: qty, unit: unit, price: pattiesTotal });
+                subtotal += pattiesTotal;
+            }
+        }
+
+        const tax = subtotal * salesTaxRate;
+        const grandTotal = subtotal + tax;
+
+        // Update displayed list of selected items
+        if (selectedItemsListDiv) {
+            if (currentOrderItems.length === 0) {
+                selectedItemsListDiv.innerHTML = '<p class="text-gray-500">No items selected yet.</p>';
+            } else {
+                selectedItemsListDiv.innerHTML = currentOrderItems.map(item => {
+                    let itemText = `${item.name}`;
+                    if (item.size) {
+                        itemText += ` (${item.size})`;
+                    }
+                    if (item.qty) {
+                        itemText += ` - ${item.qty} ${item.unit}`;
+                    }
+                    itemText += `: ${formatPrice(item.price)}`;
+                    return `<div class="flex justify-between"><span class="truncate max-w-[70%]">${itemText.substring(0, itemText.lastIndexOf(':'))}</span><span class="font-medium">${itemText.substring(itemText.lastIndexOf(':') + 1)}</span></div>`;
+                }).join('');
+            }
+        }
+
+        // Update displayed totals
+        if (subtotalAmountSpan) subtotalAmountSpan.textContent = formatPrice(subtotal);
+        if (taxAmountSpan) taxAmountSpan.textContent = formatPrice(tax);
+        if (grandTotalAmountSpan) grandTotalAmountSpan.textContent = formatPrice(grandTotal);
+    }
+
+    // Add event listeners
+    itemCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateOrderSummary);
+    });
+    if (pattiesQtyInput) {
+        pattiesQtyInput.addEventListener('input', updateOrderSummary);
+    }
+
+    // Initial call to set up summary
+    updateOrderSummary();
+});
+
 // Catering Modal Show/Hide Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const openModalButton = document.getElementById('open-catering-modal-button');
