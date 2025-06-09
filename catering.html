@@ -43,6 +43,12 @@
         <p class="text-lg text-center mb-6">Bring the taste of Island Bites to your next event! We offer comprehensive catering services for parties, corporate events, and private gatherings.</p>
         <img src="images/cater_img_banner.jpg" alt="Festive Jamaican food catering spread" class="w-full h-48 md:h-64 object-cover rounded-lg shadow-md mb-8">
 
+        <div class="text-center my-6 md:my-8">
+            <button id="open-catering-modal-button" class="inline-block bg-[var(--brand-yellow)] text-white font-semibold py-3 px-10 rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
+                Build Your Catering Order
+            </button>
+        </div>
+
         <section id="catering-packages" class="mb-8">
             <h2 class="text-3xl font-semibold text-[var(--brand-red)] mb-4 border-b-2 border-[var(--brand-yellow)] pb-2">Our Packages</h2>
             <p class="mb-4">Choose from a variety of packages or let us customize one for you:</p>
@@ -76,5 +82,205 @@
         </section>
     </div>
     <script src="script.js"></script>
+    <div id="catering-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-[100] p-4 transition-opacity duration-300 ease-in-out opacity-0">
+        <div id="catering-modal-content" class="bg-white p-4 sm:p-6 rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col transform scale-95 transition-transform duration-300 ease-in-out">
+            <!-- Header -->
+            <div class="flex justify-between items-center border-b border-gray-300 pb-3 mb-4">
+                <h2 class="text-xl sm:text-2xl font-bold text-[var(--brand-red)]">Catering Order Builder</h2>
+                <button id="close-catering-modal-button" class="text-gray-500 hover:text-gray-800 text-3xl sm:text-4xl font-light leading-none">&times;</button>
+            </div>
+
+            <!-- Menu Items Container -->
+            <div id="catering-menu-items" class="overflow-y-auto flex-grow pr-2 space-y-4">
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Jerk Chicken">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Jerk Chicken</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="jerk-chicken-small" name="jerk-chicken" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="75">
+                            <label for="jerk-chicken-small" class="text-sm">Small ($75.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="jerk-chicken-large" name="jerk-chicken" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="135">
+                            <label for="jerk-chicken-large" class="text-sm">Large ($135.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Jerk Pork">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Jerk Pork</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="jerk-pork-small" name="jerk-pork" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="85">
+                            <label for="jerk-pork-small" class="text-sm">Small ($85.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="jerk-pork-large" name="jerk-pork" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="160">
+                            <label for="jerk-pork-large" class="text-sm">Large ($160.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Curry Chicken">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Curry Chicken</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="curry-chicken-small" name="curry-chicken" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="75">
+                            <label for="curry-chicken-small" class="text-sm">Small ($75.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="curry-chicken-large" name="curry-chicken" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="135">
+                            <label for="curry-chicken-large" class="text-sm">Large ($135.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Brown Stew Chicken">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Brown Stew Chicken</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="brown-stew-chicken-small" name="brown-stew-chicken" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="65">
+                            <label for="brown-stew-chicken-small" class="text-sm">Small ($65.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="brown-stew-chicken-large" name="brown-stew-chicken" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="125">
+                            <label for="brown-stew-chicken-large" class="text-sm">Large ($125.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Oxtail">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Oxtail</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="oxtail-small" name="oxtail" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="250">
+                            <label for="oxtail-small" class="text-sm">Small ($250.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="oxtail-large" name="oxtail" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="350">
+                            <label for="oxtail-large" class="text-sm">Large ($350.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Curry Goat">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Curry Goat</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="curry-goat-small" name="curry-goat" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="120">
+                            <label for="curry-goat-small" class="text-sm">Small ($120.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="curry-goat-large" name="curry-goat" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="200">
+                            <label for="curry-goat-large" class="text-sm">Large ($200.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Tilapia">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Tilapia</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="tilapia-small" name="tilapia" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="85">
+                            <label for="tilapia-small" class="text-sm">Small ($85.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="tilapia-large" name="tilapia" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="135">
+                            <label for="tilapia-large" class="text-sm">Large ($135.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Steamed Cabbage">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Steamed Cabbage</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="steamed-cabbage-small" name="steamed-cabbage" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="40">
+                            <label for="steamed-cabbage-small" class="text-sm">Small ($40.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="steamed-cabbage-large" name="steamed-cabbage" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="65">
+                            <label for="steamed-cabbage-large" class="text-sm">Large ($65.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="White Rice">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">White Rice</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="white-rice-small" name="white-rice" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="25">
+                            <label for="white-rice-small" class="text-sm">Small ($25.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="white-rice-large" name="white-rice" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="35">
+                            <label for="white-rice-large" class="text-sm">Large ($35.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Rice & Peas">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Rice & Peas</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="rice-peas-small" name="rice-peas" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="45">
+                            <label for="rice-peas-small" class="text-sm">Small ($45.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="rice-peas-large" name="rice-peas" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="95">
+                            <label for="rice-peas-large" class="text-sm">Large ($95.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Macaroni & Cheese">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Macaroni & Cheese</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="mac-cheese-small" name="mac-cheese" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="80">
+                            <label for="mac-cheese-small" class="text-sm">Small ($80.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="mac-cheese-large" name="mac-cheese" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="135">
+                            <label for="mac-cheese-large" class="text-sm">Large ($135.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Fried Plantain">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Fried Plantain</span>
+                    <div class="flex items-center space-x-4 sm:space-x-3">
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="fried-plantain-small" name="fried-plantain" value="small" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Small" data-price="40">
+                            <label for="fried-plantain-small" class="text-sm">Small ($40.00)</label>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <input type="checkbox" id="fried-plantain-large" name="fried-plantain" value="large" class="catering-item-select rounded text-[var(--brand-red)] focus:ring-1 focus:ring-[var(--brand-yellow)]" data-size="Large" data-price="75">
+                            <label for="fried-plantain-large" class="text-sm">Large ($75.00)</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="catering-item py-3 border-b border-gray-200 flex flex-col sm:flex-row sm:justify-between sm:items-center" data-item-name="Cocktail Patties">
+                    <span class="font-semibold text-gray-800 text-lg mb-2 sm:mb-0">Cocktail Patties ($15.00/dozen)</span>
+                    <div class="flex items-center space-x-2">
+                        <label for="patties-qty" class="text-sm">Dozens:</label>
+                        <input type="number" id="patties-qty" name="patties-qty" min="0" value="0" class="catering-item-qty w-20 p-1 border border-gray-300 rounded-md sm:text-sm focus:ring-1 focus:ring-[var(--brand-yellow)] focus:border-[var(--brand-yellow)]" data-price="15.00" data-unit="dozen">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div id="order-summary" class="border-t-2 border-gray-200 pt-4 mt-4">
+                <h3 class="text-lg sm:text-xl font-semibold mb-2 text-gray-800">Your Order Summary</h3>
+                <div id="selected-items-list" class="text-sm space-y-1 mb-3">
+                    <!-- Selected items will be dynamically inserted here by JS -->
+                    <p class="text-gray-500">No items selected yet.</p>
+                </div>
+                <div class="space-y-1 text-right">
+                    <div class="font-medium">Subtotal: <span id="subtotal-amount" class="font-bold">$0.00</span></div>
+                    <div class="font-medium">Sales Tax (8.5%): <span id="tax-amount" class="font-bold">$0.00</span></div>
+                    <div class="text-xl sm:text-2xl font-bold text-[var(--brand-red)] mt-1">Grand Total: <span id="grand-total-amount" class="font-bold">$0.00</span></div>
+                </div>
+            </div>
+
+            <!-- Customer Info & Submit -->
+            <div class="border-t-2 border-gray-200 pt-4 mt-4">
+                <label for="customer-phone" class="block text-sm font-medium text-gray-700 mb-1">Your Phone Number (for order confirmation):</label>
+                <input type="tel" id="customer-phone" name="customer-phone" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-[var(--brand-yellow)] focus:border-[var(--brand-yellow)] sm:text-sm" placeholder="(555) 123-4567">
+                <button id="submit-catering-order" class="mt-4 w-full bg-[var(--brand-green)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-700 transition duration-300 text-lg">
+                    Review & Submit Order via Email
+                </button>
+                <p class="text-xs text-gray-500 mt-2 text-center">This will open your email client with a pre-filled order. Please review and send.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

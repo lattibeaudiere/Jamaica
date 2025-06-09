@@ -13,6 +13,49 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Catering Modal Show/Hide Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const openModalButton = document.getElementById('open-catering-modal-button');
+    const closeModalButton = document.getElementById('close-catering-modal-button');
+    const cateringModal = document.getElementById('catering-modal');
+    const cateringModalContent = document.getElementById('catering-modal-content'); // To prevent closing when clicking inside content
+
+    // Check if all elements exist (this script should only run if on catering.html where these elements are)
+    if (openModalButton && cateringModal && closeModalButton && cateringModalContent) {
+
+        openModalButton.addEventListener('click', () => {
+            cateringModal.classList.remove('hidden');
+            // Force a reflow before adding transition classes for show
+            void cateringModal.offsetWidth;
+            cateringModal.classList.remove('opacity-0');
+            cateringModal.classList.add('opacity-100');
+            // For modal content scaling effect
+            cateringModalContent.classList.remove('scale-95');
+            cateringModalContent.classList.add('scale-100');
+        });
+
+        const closeModal = () => {
+            cateringModal.classList.remove('opacity-100');
+            cateringModal.classList.add('opacity-0');
+             // For modal content scaling effect
+            cateringModalContent.classList.remove('scale-100');
+            cateringModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                cateringModal.classList.add('hidden');
+            }, 300); // Should match the transition duration in Tailwind classes (e.g., duration-300)
+        };
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        // Close modal if the overlay (cateringModal) is clicked, but not its content (cateringModalContent)
+        cateringModal.addEventListener('click', (event) => {
+            if (event.target === cateringModal) {
+                closeModal();
+            }
+        });
+    }
+});
+
 // Daily Soup of the Day functionality (for menu page)
 document.addEventListener('DOMContentLoaded', function() {
     const currentDayForSoup = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
