@@ -97,6 +97,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial call to set up summary
     updateOrderSummary();
+
+    const submitOrderButton = document.getElementById('submit-catering-order');
+    const customerPhoneInput = document.getElementById('customer-phone');
+
+    if (submitOrderButton && customerPhoneInput) {
+        submitOrderButton.addEventListener('click', function() {
+            const phone = customerPhoneInput.value.trim();
+            if (!phone) {
+                alert('Please enter your phone number so we can contact you to confirm your order.');
+                customerPhoneInput.focus();
+                return;
+            }
+
+            let emailBody = "Catering Order Inquiry\n"; // \n for new line
+            emailBody += "--------------------------\n";
+            emailBody += "Customer Phone: " + phone + "\n";
+            emailBody += "--------------------------\n\n";
+            emailBody += "Selected Items:\n";
+
+            let currentOrderItemsForMail = [];
+            let subtotalForMail = 0;
+            // const salesTaxRateForMail = 0.085; // Already defined above
+
+            document.querySelectorAll('.catering-item-select').forEach(checkbox => {
+                if (checkbox.checked) {
+                    const itemName = checkbox.closest('.catering-item').dataset.itemName;
+                    const size = checkbox.dataset.size;
+                    const price = parseFloat(checkbox.dataset.price);
+                    currentOrderItemsForMail.push({ name: itemName, size: size, price: price });
+                    subtotalForMail += price;
+                }
+            });
+
+            const pattiesQtyInputElement = document.getElementById('patties-qty');
+            if (pattiesQtyInputElement) {
+                const qty = parseInt(pattiesQtyInputElement.value, 10);
+                if (qty > 0) {
+                    const itemName = pattiesQtyInputElement.closest('.catering-item').dataset.itemName;
+                    const pricePerDozen = parseFloat(pattiesQtyInputElement.dataset.price);
+                    const unit = pattiesQtyInputElement.dataset.unit || 'dozen';
+                    const pattiesTotal = qty * pricePerDozen;
+                    currentOrderItemsForMail.push({ name: itemName, qty: qty, unit: unit, price: pattiesTotal });
+                    subtotalForMail += pattiesTotal;
+                }
+            }
+
+            if (currentOrderItemsForMail.length === 0) {
+                alert('Your order is empty! Please select some items.');
+                return;
+            }
+
+            currentOrderItemsForMail.forEach(item => {
+                let itemText = `${item.name}`;
+                if (item.size) {
+                    itemText += ` (${item.size})`;
+                }
+                if (item.qty) {
+                    itemText += ` - ${item.qty} ${item.unit}`;
+                }
+                itemText += `: $${item.price.toFixed(2)}`;
+                emailBody += itemText + "\n";
+            });
+
+            const taxForMail = subtotalForMail * salesTaxRate; // Use salesTaxRate from outer scope
+            const grandTotalForMail = subtotalForMail + taxForMail;
+
+            emailBody += "\n--------------------------\n";
+            emailBody += "Subtotal: $" + subtotalForMail.toFixed(2) + "\n";
+            emailBody += "Sales Tax (8.5%): $" + taxForMail.toFixed(2) + "\n";
+            emailBody += "Grand Total: $" + grandTotalForMail.toFixed(2) + "\n";
+            emailBody += "--------------------------\n";
+            emailBody += "We will contact you to confirm this order.\n";
+
+            const mailtoLink = "mailto:jamaicagrand110@gmail.com" +
+                               "?subject=" + encodeURIComponent("Catering Order Inquiry from Website") +
+                               "&body=" + encodeURIComponent(emailBody);
+
+            window.location.href = mailtoLink;
+
+            if (document.getElementById('selected-items-list')) {
+                 document.getElementById('selected-items-list').innerHTML = '<p class="text-green-600 font-semibold">Your email client should be open. Please review and send your order. We will contact you within 24 hours!</p>';
+            }
+        });
+    }
 });
 
 // Catering Modal Show/Hide Functionality
